@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PlayerAnimScript.cs" />
     <Compile Include="Assets\Scripts\BasicMovementScript.cs" />
     <Compile Include="Assets\Scripts\Camerawork\ParallaxSystem.cs" />
     <Compile Include="Assets\Scripts\Collectable.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
     <Compile Include="Assets\Scripts\TestCinemachineScript.cs" />
+    <Compile Include="Assets\Sprites&amp;Textures\Placeholder sprites\Wizard - 2D Character(Player placeholder sprite)\Demo\SimplePlayerController.cs" />
+    <Compile Include="Assets\Sprites&amp;Textures\Placeholder sprites\Wizard - 2D Character(Player placeholder sprite)\Demo\WizDemo1.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

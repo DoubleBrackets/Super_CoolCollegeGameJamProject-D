@@ -8,6 +8,7 @@ public class BasicMovementScript : MonoBehaviour
     /*Component references*/
     private Rigidbody2D rigidBody;
     private Collider2D collider;
+    public Vector2 rbVelocity { get => rigidBody.velocity; }
     /*Gravity manipulation*/
     public float fallingGravityFactor;
     private float fallGravity;
@@ -33,7 +34,9 @@ public class BasicMovementScript : MonoBehaviour
     //Extra "grounded" time for easier jumps
     private float groundedBufferTime = 0.1f;
     private float groundedBufferTimer = 0f;
+    private bool groundedRaw;
     public bool isGrounded { get => groundedBufferTimer > 0; }
+    public bool isGroundedRaw { get => groundedRaw; }
 
     private void Awake()
     {
@@ -87,6 +90,11 @@ public class BasicMovementScript : MonoBehaviour
         if(hit.collider != null)
         {
             groundedBufferTimer = groundedBufferTime;
+            groundedRaw = true;
+        }
+        else
+        {
+            groundedRaw = false;
         }
     }
      
