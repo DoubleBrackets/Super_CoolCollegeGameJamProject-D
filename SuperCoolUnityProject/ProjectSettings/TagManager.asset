@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Terrain
+  - Player
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1557950153
+    locked: 0
+  - name: Terrain
+    uniqueID: 449605931
+    locked: 0
+  - name: Player
+    uniqueID: 1414704545
+    locked: 0
+  - name: Particles
+    uniqueID: 1912682929
     locked: 0

@@ -1,0 +1,141 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BasicMovementScript : MonoBehaviour
+{
+    /*Component references*/
+    private Rigidbody2D rigidBody;
+    private Collider2D collider;
+    /*Gravity manipulation*/
+    public float fallingGravityFactor;
+    private float fallGravity;
+    private float defaultGravity;
+    /*Grounded check fields*/
+    public LayerMask groundedCheckMask;
+    private float groundedSizeOffset = 0.1f;
+    private Vector2 groundedBoxcastSize;
+    /*Movement fields*/
+    public float maxVelocity;
+    public float moveForce;
+    public float frictionFactorGrounded;
+    public float frictionFactorAir;
+    private float accMagnitudePerPhysicsStep;
+    /*Jump fields*/
+    public float jumpVelocity;
+
+    private float jumpStaticCooldown = 0.2f;
+    private float jumpStaticCooldownTimer = 0f;
+    /*Control fields*/
+    [HideInInspector] public float horizontalInput;
+    /*Movement state fields*/
+    //Extra "grounded" time for easier jumps
+    private float groundedBufferTime = 0.1f;
+    private float groundedBufferTimer = 0f;
+    public bool isGrounded { get => groundedBufferTimer > 0; }
+
+    private void Awake()
+    {
+        UpdateFields();
+    }
+
+    private void OnValidate()
+    {
+        UpdateFields();
+    }
+
+    private void UpdateFields()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        //Calculates the magnitude of the acceleration per fixed update
+        accMagnitudePerPhysicsStep = moveForce / rigidBody.mass * Time.fixedDeltaTime;
+        //Lower gravity when falling than when rising
+        defaultGravity = rigidBody.gravityScale;
+        fallGravity = defaultGravity * fallingGravityFactor;
+        //Grounded boxcast uses collider bounds
+        collider = GetComponent<Collider2D>();
+        groundedBoxcastSize = (Vector2)collider.bounds.size - Vector2.up*groundedSizeOffset - Vector2.right*groundedSizeOffset;
+    }
+
+    private void Update()
+    {
+        /*Update timers*/
+        jumpStaticCooldownTimer -= Time.deltaTime;
+        groundedBufferTimer -= Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        GroundedCheck();
+        HorizontalMovement();
+        //Gravity adjustment
+        if(rigidBody.velocity.y >= 0)
+        {
+            rigidBody.gravityScale = defaultGravity;
+        }
+        else
+        {
+            rigidBody.gravityScale = fallGravity;
+        }
+    }
+
+    private void GroundedCheck()
+    {
+        //Boxcasts down to check for a floor
+        RaycastHit2D hit = Physics2D.BoxCast(collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1.5f,groundedCheckMask);
+        if(hit.collider != null)
+        {
+            groundedBufferTimer = groundedBufferTime;
+        }
+    }
+     
+    private void HorizontalMovement()
+    {
+        float horizontalAcceleration = accMagnitudePerPhysicsStep * horizontalInput;
+        float currentXVel = rigidBody.velocity.x;
+        float xVelocityAfterAcceleration = currentXVel + horizontalAcceleration;
+        bool hasForceBeenApplied = false;
+
+        float currentXDir = Mathf.Sign(currentXVel);
+        float movementXDir = Mathf.Sign(horizontalAcceleration);
+        if(horizontalAcceleration != 0)
+        {
+            //Movement only apply only if current velocity is under the max velocity or movement is opposite to the current velocity
+            if ((currentXDir == movementXDir && Mathf.Abs(currentXVel) <= maxVelocity) || currentXDir != movementXDir || currentXVel == 0)
+            {
+                //Apply force as acceleration
+                if (Mathf.Abs(xVelocityAfterAcceleration) < maxVelocity)
+                {
+                   rigidBody.SetXVel(xVelocityAfterAcceleration);
+                    hasForceBeenApplied = true;
+                }
+                //Goes over max speed, so set velocity to max speed directly
+                else
+                {
+                    rigidBody.SetXVel(maxVelocity * movementXDir);
+                    hasForceBeenApplied = true;
+                }
+            }
+        }
+
+        //Horizontal friction
+        if (!hasForceBeenApplied)
+        {
+            if(isGrounded)
+                rigidBody.SetXVel(rigidBody.velocity.x * frictionFactorGrounded);
+            else
+                rigidBody.SetXVel(rigidBody.velocity.x * frictionFactorAir);
+        }
+
+        
+    }
+
+    public void Jump()
+    {
+        if (jumpStaticCooldownTimer > 0 || !isGrounded)
+            return;
+        rigidBody.SetYVel(jumpVelocity);
+        jumpStaticCooldownTimer = jumpStaticCooldown;
+    }
+
+}
