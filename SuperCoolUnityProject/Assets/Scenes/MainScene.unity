@@ -701,7 +701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120424840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11064364, y: 0.11696815, z: 4.018383}
+  m_LocalPosition: {x: -7.29, y: 0.11696815, z: 4.018383}
   m_LocalScale: {x: 35.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1301632961}
@@ -985,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387213526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.94, y: -1.41, z: 4.018383}
+  m_LocalPosition: {x: 10.58, y: 0.1, z: 4.018383}
   m_LocalScale: {x: 35.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1301632961}
@@ -1152,7 +1152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593300990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.67, z: -10}
+  m_LocalPosition: {x: 0, y: 0.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 148193250}
@@ -1369,6 +1369,48 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201845, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: interactDistance
+      value: 2.4162555
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201845, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: displayText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201845, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: displayText.Array.data[0]
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201845, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: displayText.Array.data[1]
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201845, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: displayText.Array.data[2]
+      value: Last page of dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201849, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: m_text
+      value: 'asdf
+
+        ASDF'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201849, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: m_verticalMapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704396297850201849, guid: 8d96f311c0c440a469413da7739ee35e,
+        type: 3}
+      propertyPath: m_horizontalMapping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d96f311c0c440a469413da7739ee35e, type: 3}

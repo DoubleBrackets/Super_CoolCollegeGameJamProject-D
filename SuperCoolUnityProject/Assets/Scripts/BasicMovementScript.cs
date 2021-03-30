@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BasicMovementScript : MonoBehaviour
 {
@@ -138,4 +139,33 @@ public class BasicMovementScript : MonoBehaviour
         jumpStaticCooldownTimer = jumpStaticCooldown;
     }
 
+}
+//Custom movement editor, mostly for visualizing jumps and whatnot for level design
+[CustomEditor(typeof(BasicMovementScript))]
+public class BasicMovementScriptCustomEditor : Editor
+{
+    [DrawGizmo(GizmoType.Active)]
+    private static void GizmoDraw(BasicMovementScript moveScript, GizmoType aGizmoType)
+    {
+        SimulateJump(moveScript);
+    }
+    
+    private static void SimulateJump(BasicMovementScript moveScript)
+    {
+        float timeInterval = 0.1f;
+        float timeDuration = 3f;
+        int count = (int)(timeDuration / timeInterval);
+
+        Rigidbody2D rb = moveScript.GetComponent<Rigidbody2D>();
+
+
+        Vector2 startVel = new Vector2(moveScript.maxVelocity, moveScript.jumpVelocity);
+        Vector2 prev = moveScript.transform.position;
+        for (int x = 1; x <= count; x++)
+        {
+            Vector2 current = (Vector2)moveScript.transform.position + rb.CalculateJumpArcPoint(startVel, moveScript.fallingGravityFactor, x * timeInterval);
+            Gizmos.DrawLine(prev, current);
+            prev = current;
+        }
+    }
 }
