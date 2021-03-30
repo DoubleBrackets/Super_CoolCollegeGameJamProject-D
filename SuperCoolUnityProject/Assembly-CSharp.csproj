@@ -64,11 +64,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BasicMovementScript.cs" />
+    <Compile Include="Assets\Scripts\Camerawork\ParallaxSystem.cs" />
+    <Compile Include="Assets\Scripts\DialogueScript.cs" />
     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
-    <Compile Include="Assets\Scripts\ParallaxSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
     <Compile Include="Assets\TestCinemachineScript.cs" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -600,6 +622,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -663,6 +688,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -677,12 +705,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/Arthur/Documents/Super_CoolCollegeGameJamProject-D/SuperCoolUnityProject/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

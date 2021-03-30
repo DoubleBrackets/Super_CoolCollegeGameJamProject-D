@@ -11,7 +11,7 @@ public class TestCinemachineScript : MonoBehaviour
     bool toggle = false;
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E))
+        if(Input.GetKey(KeyCode.G))
         {
             toggle = !toggle;
             v1.enabled = toggle;

@@ -35,7 +35,7 @@ public class ParallaxSystem : MonoBehaviour
     }
 
     //Updates positions of background/foreground
-    void FixedUpdate()
+    void Update()
     {
         //Finds vector of camera movement
         Vector2 currCameraPos = transform.position;

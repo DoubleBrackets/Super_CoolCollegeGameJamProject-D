@@ -11,6 +11,10 @@ public class PlayerInputScript : MonoBehaviour
     /*Movement input fields*/
     [HideInInspector] public float horizontalInput;
 
+    /*Keypress events*/
+
+    public event System.Action<Vector2> InteractButtonPressed;
+
     private void Awake()
     {
         instance = this;
@@ -25,6 +29,11 @@ public class PlayerInputScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             movementScript.Jump();
+        }
+        //Interact
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            InteractButtonPressed?.Invoke(transform.position);
         }
     }
 }

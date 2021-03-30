@@ -50,6 +50,9 @@ TagManager:
   - name: Player
     uniqueID: 1414704545
     locked: 0
+  - name: Dialogue
+    uniqueID: 4234147001
+    locked: 0
   - name: Particles
     uniqueID: 1912682929
     locked: 0
