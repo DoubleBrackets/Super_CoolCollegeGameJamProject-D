@@ -65,8 +65,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BasicMovementScript.cs" />
     <Compile Include="Assets\Scripts\Camerawork\ParallaxSystem.cs" />
+    <Compile Include="Assets\Scripts\Collectable.cs" />
     <Compile Include="Assets\Scripts\DialogueScript.cs" />
     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
+    <Compile Include="Assets\Scripts\GameSystemsManager.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
     <Compile Include="Assets\Scripts\TestCinemachineScript.cs" />

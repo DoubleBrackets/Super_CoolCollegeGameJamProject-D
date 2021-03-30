@@ -4,7 +4,11 @@ using UnityEngine;
 
 public static class ExtensionMethods 
 {
-
+    /*Layer tests*/
+    public static bool IsInMask(this LayerMask mask, int layer)
+    {
+        return mask == (mask | 1 << layer);
+    }
 
 
 
