@@ -16,23 +16,27 @@ public class PlayerAnimScript : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        PlayerPickupScript.instance.ItemThrown += PlayThrowAnimation;
+    }
+
     private void Update()
     {
         Vector2 vel = playerMoveScript.rbVelocity;
         float input = PlayerInputScript.instance.horizontalInput;
         //Flip to face direction
-        if(input > 0)
-        {
-            transform.localScale = new Vector2(1, 1);
-        }
-        else if(input < 0)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
+        transform.localScale = new Vector2(PlayerInputScript.instance.facing, 1);
         //Jump check
         anim.SetBool("IsGrounded", playerMoveScript.isGroundedRaw);
         //movement check
         anim.SetBool("IsMoving", Mathf.Abs(vel.x) > 0.5f);
+        anim.SetBool("IsAttacking", false);
+    }
+
+    void PlayThrowAnimation()
+    {
+        anim.SetBool("IsAttacking", true);
     }
 
     void PlayAnim(string name)

@@ -7,7 +7,8 @@ public class BasicMovementScript : MonoBehaviour
 {
     /*Component references*/
     private Rigidbody2D rigidBody;
-    private Collider2D collider;
+    public Collider2D _collider;
+    public Vector2 collCenter{ get => _collider.bounds.center; }
     public Vector2 rbVelocity { get => rigidBody.velocity; }
     /*Gravity manipulation*/
     public float fallingGravityFactor;
@@ -57,8 +58,8 @@ public class BasicMovementScript : MonoBehaviour
         defaultGravity = rigidBody.gravityScale;
         fallGravity = defaultGravity * fallingGravityFactor;
         //Grounded boxcast uses collider bounds
-        collider = GetComponent<Collider2D>();
-        groundedBoxcastSize = (Vector2)collider.bounds.size - Vector2.up*groundedSizeOffset - Vector2.right*groundedSizeOffset;
+        _collider = GetComponent<Collider2D>();
+        groundedBoxcastSize = (Vector2)_collider.bounds.size - Vector2.up*groundedSizeOffset - Vector2.right*groundedSizeOffset;
     }
 
     private void Update()
@@ -86,7 +87,7 @@ public class BasicMovementScript : MonoBehaviour
     private void GroundedCheck()
     {
         //Boxcasts down to check for a floor
-        RaycastHit2D hit = Physics2D.BoxCast(collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1.5f,groundedCheckMask);
+        RaycastHit2D hit = Physics2D.BoxCast(_collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1.5f,groundedCheckMask);
         if(hit.collider != null)
         {
             groundedBufferTimer = groundedBufferTime;
