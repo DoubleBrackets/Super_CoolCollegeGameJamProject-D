@@ -7,22 +7,37 @@ public class PlayerPickupScript : MonoBehaviour
 {
     //Singleton ref
     public static PlayerPickupScript instance;
+    /*Component refs*/
+    private Collider2D playerCollider;
     /*Pickup casting fields*/
     public LayerMask pickupMask;
     public float pickupDistance;
     /*Throwing fields*/
+    //Static action cooldown
     public float throwVelocity;
+    private float throwCooldown = 0.2f;
+    private float throwTimer = 0f;
     /*Picked object fields*/
     public float holdDist = 2f;
-    private Rigidbody2D pickedRb;
-    private Vector2 relativePos;
-    private bool isCarryingObject = false;
+    public int maxObjects;
+
+    List<PickedObject> pickedObjects;
+    int count = 0;
     /*Events*/
     public event System.Action ItemThrown;
+
+    struct PickedObject
+    {
+        public Rigidbody2D pickedRb;
+        public Collider2D pickedColl;
+    }
+
 
     private void Awake()
     {
         instance = this;
+        playerCollider = GetComponent<Collider2D>();
+        pickedObjects = new List<PickedObject>();
     }
 
     private void Start()
@@ -31,30 +46,48 @@ public class PlayerPickupScript : MonoBehaviour
         PlayerInputScript.instance.PickupThrowButtonPressed += PickupThrow;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        //Update picked up object position, circles player following mouse
-        if(isCarryingObject)
+        /*Timer updates*/
+        throwTimer -= Time.deltaTime;
+        //Update picked up objects position, circles player following mouse
+        if(count != 0)
         {
-            relativePos = holdDist * PlayerInputScript.instance.vectorToMouseNormalized;
-            pickedRb.transform.position = Vector2.Lerp(pickedRb.transform.position, PlayerInputScript.instance.movementScript.collCenter + relativePos, 0.2f) ;
+            int index = 0;
+            float angleOffset = 360f / count;
+            foreach (PickedObject obj in pickedObjects)
+            {
+                float targetAngle = index*angleOffset + PlayerInputScript.instance.vectorToMouseNormalized.Angle();
+                float cAngle = ((Vector2)(obj.pickedRb.transform.position - playerCollider.bounds.center)).Angle();
+                float diff = Mathf.DeltaAngle(cAngle, targetAngle);
+                float newAngle = Mathf.Lerp(cAngle, cAngle + diff, 7.5f * Time.deltaTime);
+                obj.pickedRb.transform.position = playerCollider.bounds.center + Quaternion.Euler(0, 0, newAngle) * Vector2.right * holdDist;
+                index++;
+            }
         }
+ 
     }
 
     void PickupThrow(Vector2 pos)
     {
-        if (!isCarryingObject)
+        bool objectFound = false;
+        if (count < maxObjects && throwTimer <= 0)
         {
-            Pickup();
+            objectFound = Pickup();
+            if(objectFound)
+            {
+                throwTimer = throwCooldown;
+            }
         }
-        else
+        //Throw if no spaces left or no object found to pick up
+        if(!objectFound && count > 0 && throwTimer <= 0)
         {
             ItemThrown?.Invoke();
-            Invoke("Throw", 0.25f);
+            Throw(pickedObjects[0]);
         }
     }
 
-    void Pickup()
+    bool Pickup()
     {
         int dir = PlayerInputScript.instance.facing;
         Vector2 center = GetComponent<Collider2D>().bounds.center;
@@ -66,24 +99,41 @@ public class PlayerPickupScript : MonoBehaviour
         if(hit.collider != null)
         {
             Rigidbody2D pickupRb = hit.collider.GetComponent<Rigidbody2D>();
-            if (pickupRb == null)
-                return;
+            if (pickupRb == null || pickupRb.isKinematic)
+                return false;
             /*Picks up the object*/
-            relativePos = pickupRb.transform.position - transform.position;
-            isCarryingObject = true;
-            pickedRb = pickupRb;
-            pickedRb.isKinematic = true;
+            var newObject = new PickedObject { pickedColl = hit.collider, pickedRb = pickupRb };
+            count++;
+            //Disables rb and collider of picked object
+            newObject.pickedRb.isKinematic = true;
+            Physics2D.IgnoreCollision(newObject.pickedColl, playerCollider, true);
+            newObject.pickedColl.enabled = false;
+            pickedObjects.Add(newObject);
+
+            return true;
         }
+        return false;
 
     }
 
-    void Throw()
+    void Throw(PickedObject obj)
     {
-        pickedRb.isKinematic = false;
-        pickedRb.velocity = throwVelocity * PlayerInputScript.instance.vectorToMouseNormalized;
-        isCarryingObject = false;
+        StartCoroutine(ThrowCoroutine(obj, PlayerInputScript.instance.vectorToMouseNormalized));
+        throwTimer = throwCooldown;
     }
 
-
+    private IEnumerator ThrowCoroutine(PickedObject obj,Vector2 dirNormalized)
+    {
+        yield return new WaitForSeconds(0.15f);
+        //Throw object
+        obj.pickedRb.transform.position = (Vector2)playerCollider.bounds.center + dirNormalized * holdDist;
+        obj.pickedRb.velocity = throwVelocity * dirNormalized;
+        pickedObjects.Remove(obj);
+        count--;
+        //Reenables rb and collider
+        obj.pickedRb.isKinematic = false;
+        obj.pickedColl.enabled = true;
+        Physics2D.IgnoreCollision(obj.pickedColl, playerCollider, false);
+    }
 
 }

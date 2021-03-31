@@ -53,7 +53,7 @@ public class PlayerInputScript : MonoBehaviour
         {
             InteractButtonPressed?.Invoke(transform.position);
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetMouseButton(1))
         {
             PickupThrowButtonPressed?.Invoke(transform.position);
         }
