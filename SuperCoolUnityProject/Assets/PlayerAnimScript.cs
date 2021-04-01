@@ -18,7 +18,7 @@ public class PlayerAnimScript : MonoBehaviour
 
     private void Start()
     {
-        PlayerPickupScript.instance.ItemThrown += PlayThrowAnimation;
+        //PlayerPickupScript.instance.ItemThrown += PlayThrowAnimation;
     }
 
     private void Update()
