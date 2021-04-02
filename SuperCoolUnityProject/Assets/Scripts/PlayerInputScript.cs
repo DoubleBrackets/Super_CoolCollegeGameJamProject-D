@@ -20,7 +20,7 @@ public class PlayerInputScript : MonoBehaviour
     /*Keypress events*/
 
     public event System.Action<Vector2> InteractButtonPressed;
-    public event System.Action<Vector2> PickupThrowButtonPressed;
+    public event System.Action<Vector2> AttackButtonPressed;
 
     private void Awake()
     {
@@ -53,9 +53,9 @@ public class PlayerInputScript : MonoBehaviour
         {
             InteractButtonPressed?.Invoke(transform.position);
         }
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(0))
         {
-            PickupThrowButtonPressed?.Invoke(transform.position);
+            AttackButtonPressed?.Invoke(vectorToMouseNormalized);
         }
     }
 }

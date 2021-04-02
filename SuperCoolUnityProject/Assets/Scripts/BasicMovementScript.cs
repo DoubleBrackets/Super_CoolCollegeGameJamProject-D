@@ -39,6 +39,8 @@ public class BasicMovementScript : MonoBehaviour
     public bool isGrounded { get => groundedBufferTimer > 0; }
     public bool isGroundedRaw { get => groundedRaw; }
 
+    [HideInInspector] public int frictionEnabled = 0;
+    [HideInInspector] public int movementEnabled = 0;
     private void Awake()
     {
         UpdateFields();
@@ -108,10 +110,10 @@ public class BasicMovementScript : MonoBehaviour
 
         float currentXDir = Mathf.Sign(currentXVel);
         float movementXDir = Mathf.Sign(horizontalAcceleration);
-        if(horizontalAcceleration != 0)
+        if(horizontalAcceleration != 0 && movementEnabled == 0)
         {
             //Movement only apply only if current velocity is under the max velocity or movement is opposite to the current velocity
-            if ((currentXDir == movementXDir && Mathf.Abs(currentXVel) <= maxVelocity) || currentXDir != movementXDir || currentXVel == 0)
+            if ((currentXDir == movementXDir && Mathf.Abs(currentXVel) <= maxVelocity)  || currentXVel == 0)
             {
                 //Apply force as acceleration
                 if (Mathf.Abs(xVelocityAfterAcceleration) < maxVelocity)
@@ -126,10 +128,17 @@ public class BasicMovementScript : MonoBehaviour
                     hasForceBeenApplied = true;
                 }
             }
+            else if( currentXDir != movementXDir)
+            {
+                //Apply force as acceleration
+                rigidBody.SetXVel(xVelocityAfterAcceleration);
+                //hasForceBeenApplied = true;
+            }
+
         }
 
         //Horizontal friction
-        if (!hasForceBeenApplied)
+        if (!hasForceBeenApplied && frictionEnabled == 0)
         {
             if(isGrounded)
                 rigidBody.SetXVel(rigidBody.velocity.x * frictionFactorGrounded);

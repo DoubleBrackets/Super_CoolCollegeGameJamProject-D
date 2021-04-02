@@ -18,7 +18,7 @@ public class PlayerAnimScript : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPickupScript.instance.ItemThrown += PlayThrowAnimation;
+        SweetMagicScript.instance.SweetMagicStrikeEvent += PlayAttackAnimation;
     }
 
     private void Update()
@@ -34,7 +34,7 @@ public class PlayerAnimScript : MonoBehaviour
         anim.SetBool("IsAttacking", false);
     }
 
-    void PlayThrowAnimation()
+    void PlayAttackAnimation()
     {
         anim.SetBool("IsAttacking", true);
     }
