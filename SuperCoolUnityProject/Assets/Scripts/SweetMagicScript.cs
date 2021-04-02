@@ -21,7 +21,7 @@ public class SweetMagicScript : MonoBehaviour
     public ParticleSystem particles;
     public ParticleSystem dashParticles;
     /*Events*/
-    public event System.Action SweetMagicStrikeEvent;
+    public event System.Action<int,int> SweetMagicStrikeEvent;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class SweetMagicScript : MonoBehaviour
     }
     private void Start()
     {
-        PlayerInputScript.instance.AttackButtonPressed += SweetStrike;
+        PlayerInputScript.instance.SweetStrikeButtonPressed += SweetStrike;
         playerMoveScript = PlayerInputScript.instance.movementScript;
     }
 
@@ -46,7 +46,7 @@ public class SweetMagicScript : MonoBehaviour
             return;
         cooldownTimer = strikeCooldown;
         StartCoroutine(SweetStrikeCoroutine(dirNormalized));
-        SweetMagicStrikeEvent?.Invoke();
+        SweetMagicStrikeEvent?.Invoke(1,PlayerInputScript.instance.facing);
     }
 
     private IEnumerator SweetStrikeCoroutine(Vector2 dirNormalized)
@@ -55,6 +55,7 @@ public class SweetMagicScript : MonoBehaviour
         float mouseDir = Mathf.Sign(PlayerInputScript.instance.vectorToMouseRaw.x);
         /*Dash*/
         rb.SetXVel(horizontalInput * dashVel);
+        rb.SetYVel(0);
         playerMoveScript.frictionEnabled++;
         playerMoveScript.movementEnabled++;
         dashParticles.Play();

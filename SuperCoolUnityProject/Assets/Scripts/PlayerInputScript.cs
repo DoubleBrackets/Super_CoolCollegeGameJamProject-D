@@ -20,7 +20,8 @@ public class PlayerInputScript : MonoBehaviour
     /*Keypress events*/
 
     public event System.Action<Vector2> InteractButtonPressed;
-    public event System.Action<Vector2> AttackButtonPressed;
+    public event System.Action<Vector2> SweetStrikeButtonPressed;
+    public event System.Action<Vector2> SavorySprayButtonPressed;
 
     private void Awake()
     {
@@ -55,7 +56,11 @@ public class PlayerInputScript : MonoBehaviour
         }
         if(Input.GetMouseButton(0))
         {
-            AttackButtonPressed?.Invoke(vectorToMouseNormalized);
+            SweetStrikeButtonPressed?.Invoke(vectorToMouseNormalized);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            SavorySprayButtonPressed?.Invoke(vectorToMouseNormalized);
         }
     }
 }

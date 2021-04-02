@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GameSystemsManager.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
+    <Compile Include="Assets\Scripts\SavorySprayScript.cs" />
     <Compile Include="Assets\Scripts\SweetMagicScript.cs" />
     <Compile Include="Assets\Scripts\TestCinemachineScript.cs" />
     <Compile Include="Assets\Sprites&amp;Textures\Placeholder sprites\Wizard - 2D Character(Player placeholder sprite)\Demo\SimplePlayerController.cs" />
