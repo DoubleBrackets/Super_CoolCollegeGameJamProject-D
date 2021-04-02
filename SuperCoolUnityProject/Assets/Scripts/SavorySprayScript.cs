@@ -47,6 +47,7 @@ public class SavorySprayScript : MonoBehaviour
     {
         //rb.constraints = RigidbodyConstraints2D.FreezeAll;
         playerMovementScript.movementEnabled++;
+        CineMachineImpulseManager.instance.Impulse(Vector2.up * -0.5f);
         yield return new WaitForSeconds(windupTime);
         part.Play();
         CineMachineImpulseManager.instance.Impulse(Vector2.up * 1f);

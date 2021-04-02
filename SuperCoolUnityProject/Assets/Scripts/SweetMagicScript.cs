@@ -66,6 +66,7 @@ public class SweetMagicScript : MonoBehaviour
         playerMoveScript.frictionEnabled--;
         playerMoveScript.movementEnabled--;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput, 0) * -0.5f);
         yield return new WaitForSeconds(windupTime);
         /*Attack*/
 
