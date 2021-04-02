@@ -11,7 +11,17 @@ public static class ExtensionMethods
         return mask == (mask | 1 << layer);
     }
 
-
+    /*Particle stuff*/
+    public static void SetParticleDirection(this ParticleSystem particles,float dir)
+    {
+        dir = Mathf.Sign(dir);
+        particles.transform.localScale = new Vector3(dir, 1, 1);
+        int count = particles.transform.childCount;
+        for (int x = 0; x < count; x++)
+        {
+            particles.transform.GetChild(x).localScale = new Vector3(dir, 1, 1);
+        }
+    }
 
     /*Rigidbody helpers*/
 

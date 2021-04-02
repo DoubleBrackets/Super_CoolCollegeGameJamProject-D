@@ -56,7 +56,7 @@ public class SweetMagicScript : MonoBehaviour
         rb.SetXVel(horizontalInput * dashVel);
         playerMoveScript.frictionEnabled++;
         playerMoveScript.movementEnabled++;
-        for (int x = 1; x <= 3; x++)
+        for (int x = 1; x <= 4; x++)
         {
             yield return new WaitForFixedUpdate();
         }
@@ -66,10 +66,11 @@ public class SweetMagicScript : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(windupTime);
         /*Attack*/
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        particles.transform.localScale = new Vector2(horizontalInput, 1);
+
+        particles.SetParticleDirection(horizontalInput);
+
         particles.Play();
-        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput,0) * 2f);
+        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput,0) * 1.6f);
         /*Casting for targets*/
         Vector2 size = new Vector2(range, 1f);
         Collider2D[] hits = Physics2D.OverlapBoxAll(playerMoveScript.collCenter + Vector2.right * horizontalInput * range / 2f, size, 0f, targetMask);
@@ -77,6 +78,8 @@ public class SweetMagicScript : MonoBehaviour
         {
             //Hit logic
         }
-
+        yield return new WaitForSeconds(0.15f);
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.SetXVel(horizontalInput * playerMoveScript.maxVelocity);
     }
 }
