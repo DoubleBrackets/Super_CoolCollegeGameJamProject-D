@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ErrorTesting\ErrorTesting Script.cs" />
      <Compile Include="Assets\PlayerAnimScript.cs" />
      <Compile Include="Assets\Scripts\BasicMovementScript.cs" />
      <Compile Include="Assets\Scripts\Camerawork\ParallaxSystem.cs" />
