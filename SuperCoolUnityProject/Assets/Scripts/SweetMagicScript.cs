@@ -19,6 +19,7 @@ public class SweetMagicScript : MonoBehaviour
     public float dashVel;
     /*Visuals*/
     public ParticleSystem particles;
+    public ParticleSystem dashParticles;
     /*Events*/
     public event System.Action SweetMagicStrikeEvent;
 
@@ -56,11 +57,11 @@ public class SweetMagicScript : MonoBehaviour
         rb.SetXVel(horizontalInput * dashVel);
         playerMoveScript.frictionEnabled++;
         playerMoveScript.movementEnabled++;
+        dashParticles.Play();
         for (int x = 1; x <= 4; x++)
         {
             yield return new WaitForFixedUpdate();
         }
-        particles.Stop();
         playerMoveScript.frictionEnabled--;
         playerMoveScript.movementEnabled--;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
