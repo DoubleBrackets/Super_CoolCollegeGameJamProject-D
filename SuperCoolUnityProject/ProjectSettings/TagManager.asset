@@ -17,7 +17,7 @@ TagManager:
   - Player
   - Collectable
   - Projectile
-  - Walls
+  - 
   - 
   - 
   - 
@@ -46,12 +46,6 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 449605931
-    locked: 0
-  - name: Walls
-    uniqueID: 3995305133
-    locked: 0
-  - name: Enemies
-    uniqueID: 654881353
     locked: 0
   - name: Player
     uniqueID: 1414704545
