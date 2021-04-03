@@ -15,8 +15,9 @@ public class SavorySprayScript : MonoBehaviour
     public float windupTime;
     private float attackCooldownTimer = 0f;
     public LayerMask targetMask;
+    private float followThroughTime = 0.3f;
     /*Events*/
-    public event System.Action<int,int> SavorySprayEvent;
+    public event System.Action<int,int,float> SavorySprayEvent;
     private void Awake()
     {
         instance = this;
@@ -35,12 +36,13 @@ public class SavorySprayScript : MonoBehaviour
 
     void Spray(Vector2 dirNormalized)
     {
-        if (attackCooldownTimer > 0)
+        if (attackCooldownTimer > 0 || !MagicManager.attackTimerCleared)
             return;
+        MagicManager.SetStaticAttackTimer(windupTime+followThroughTime);
         attackCooldownTimer = attackCooldown;
         transform.rotation = Quaternion.Euler(0, 0, dirNormalized.Angle());
         StartCoroutine(SprayCoroutine());
-        SavorySprayEvent?.Invoke(2,(int)Mathf.Sign(dirNormalized.x));
+        SavorySprayEvent?.Invoke(2,(int)Mathf.Sign(dirNormalized.x),followThroughTime+windupTime);
     }
 
     private IEnumerator SprayCoroutine()
@@ -51,7 +53,7 @@ public class SavorySprayScript : MonoBehaviour
         yield return new WaitForSeconds(windupTime);
         part.Play();
         CineMachineImpulseManager.instance.Impulse(Vector2.up * 1f);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(followThroughTime);
         playerMovementScript.movementEnabled--;
         //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }    
