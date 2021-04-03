@@ -50,6 +50,9 @@ TagManager:
   - name: Walls
     uniqueID: 3566625237
     locked: 0
+  - name: NPCS
+    uniqueID: 3380451447
+    locked: 0
   - name: Player
     uniqueID: 1414704545
     locked: 0
