@@ -61,7 +61,7 @@ public class SweetMagicScript : MonoBehaviour
         playerMoveScript.frictionEnabled++;
         playerMoveScript.movementEnabled++;
         dashParticles.Play();
-        for (int x = 1; x <= 4; x++)
+        for (int x = 1; x <= 5; x++)
         {
             yield return new WaitForFixedUpdate();
         }
