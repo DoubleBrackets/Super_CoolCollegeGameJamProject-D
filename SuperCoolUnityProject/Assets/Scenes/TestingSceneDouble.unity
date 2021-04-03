@@ -1370,30 +1370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2888095731545601229, guid: 65d2d108df1cc0142b89404828eabb56,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2888095731545601229, guid: 65d2d108df1cc0142b89404828eabb56,
-        type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2888095731545601229, guid: 65d2d108df1cc0142b89404828eabb56,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
@@ -1508,6 +1488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630691268477568790, guid: 8a154ae357b73114a9ba24280d4a8e8a,
+        type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630691268477568810, guid: 8a154ae357b73114a9ba24280d4a8e8a,
         type: 3}

@@ -16,7 +16,7 @@ public class BasicMovementScript : MonoBehaviour
     private float defaultGravity;
     /*Grounded check fields*/
     public LayerMask groundedCheckMask;
-    private float groundedSizeOffset = 0.1f;
+    private float groundedSizeOffset = 0.05f;
     private Vector2 groundedBoxcastSize;
     /*Movement fields*/
     public float maxVelocity;
@@ -89,7 +89,7 @@ public class BasicMovementScript : MonoBehaviour
     private void GroundedCheck()
     {
         //Boxcasts down to check for a floor
-        RaycastHit2D hit = Physics2D.BoxCast(_collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1.5f,groundedCheckMask);
+        RaycastHit2D hit = Physics2D.BoxCast(_collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1f,groundedCheckMask);
         if(hit.collider != null)
         {
             groundedBufferTimer = groundedBufferTime;
@@ -140,7 +140,7 @@ public class BasicMovementScript : MonoBehaviour
         //Horizontal friction
         if (!hasForceBeenApplied && frictionEnabled == 0)
         {
-            if(isGrounded)
+            if(isGrounded && jumpStaticCooldownTimer <= 0)
                 rigidBody.SetXVel(rigidBody.velocity.x * frictionFactorGrounded);
             else
                 rigidBody.SetXVel(rigidBody.velocity.x * frictionFactorAir);

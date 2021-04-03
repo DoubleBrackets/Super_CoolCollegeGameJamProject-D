@@ -19,6 +19,7 @@ public class MovingPlatformScript : MonoBehaviour
     private int currentPoint = 0;
     private int nextPoint = 1;
     private float currentTimer= 0f;
+    private Vector2 previousVector;
 
     private void Awake()
     {
@@ -35,14 +36,16 @@ public class MovingPlatformScript : MonoBehaviour
         floorYLocal = coll.bounds.center.y + coll.bounds.extents.y - transform.position.y;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        currentTimer += Time.fixedDeltaTime;
+        currentTimer += Time.deltaTime;
+        Vector2 prevPos = transform.position;
         transform.position = Vector2.Lerp(positions[currentPoint],positions[nextPoint],currentTimer/times[currentPoint]);
         if(currentTimer > times[currentPoint])
         {
             MoveToNextPoint();
         }
+        previousVector = ((Vector2)transform.position - prevPos);
     }
 
     void MoveToNextPoint()
@@ -77,6 +80,7 @@ public class MovingPlatformScript : MonoBehaviour
             if(valueFound)
             {
                 rb.transform.SetParent(returnTransform);
+                rb.velocity += previousVector.normalized * speed;
                 attachedRbs.Remove(rb);
             }
         }
