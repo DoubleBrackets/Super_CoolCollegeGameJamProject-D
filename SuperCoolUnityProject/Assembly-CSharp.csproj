@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\GameSystemsManager.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\MagicManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
     <Compile Include="Assets\Scripts\SavorySprayScript.cs" />
     <Compile Include="Assets\Scripts\SweetMagicScript.cs" />

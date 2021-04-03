@@ -11,7 +11,7 @@ public class PlayerAnimScript : MonoBehaviour
 
     /*Anim logic fields*/
     private string currentAnim = "Idle";
-    private int count;
+    [HideInInspector] public float isInAttacking;
 
     private void Awake()
     {
@@ -36,19 +36,25 @@ public class PlayerAnimScript : MonoBehaviour
         anim.SetBool("IsGrounded", playerMoveScript.isGroundedRaw);
         //movement check
         anim.SetBool("IsMoving", Mathf.Abs(vel.x) > 0.5f);
-        if (count > 0)
+        //Attacking
+        
+        if (isInAttacking > 0)
         {
-            count--;
-            if(count == 0)
+            isInAttacking -= Time.deltaTime;
+            if(isInAttacking <= 0)
+            {
                 anim.SetBool("IsAttacking", false);
+                anim.SetInteger("AttackType", 0);
+            }
         }
     }
 
-    void PlayAttackAnimation(int attackId,int facing)
+    void PlayAttackAnimation(int attackId,int facing,float duration)
     {
         anim.SetBool("IsAttacking", true);
         anim.SetInteger("AttackType", attackId);
-        count = 5;
+        if(isInAttacking < duration)
+            isInAttacking = duration;
         transform.localScale = new Vector2(facing, 1);
     }
 

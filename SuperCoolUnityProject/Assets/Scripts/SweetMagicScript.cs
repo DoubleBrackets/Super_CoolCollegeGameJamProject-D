@@ -15,13 +15,14 @@ public class SweetMagicScript : MonoBehaviour
     private float cooldownTimer = 0f;
     public float windupTime;
     private LayerMask targetMask = 1 << 12;
+    private float followThroughTime = 0.2f;
     /*Dash component fields*/
     public float dashVel;
     /*Visuals*/
     public ParticleSystem particles;
     public ParticleSystem dashParticles;
     /*Events*/
-    public event System.Action<int,int> SweetMagicStrikeEvent;
+    public event System.Action<int,int,float> SweetMagicStrikeEvent;
 
     private void Awake()
     {
@@ -42,11 +43,12 @@ public class SweetMagicScript : MonoBehaviour
 
     void SweetStrike(Vector2 dirNormalized)
     {
-        if (cooldownTimer > 0)
+        if (cooldownTimer > 0 || !MagicManager.attackTimerCleared)
             return;
+        MagicManager.SetStaticAttackTimer(windupTime);
         cooldownTimer = strikeCooldown;
         StartCoroutine(SweetStrikeCoroutine(dirNormalized));
-        SweetMagicStrikeEvent?.Invoke(1,PlayerInputScript.instance.facing);
+        SweetMagicStrikeEvent?.Invoke(1,PlayerInputScript.instance.facing,windupTime+followThroughTime+0.2f);
     }
 
     private IEnumerator SweetStrikeCoroutine(Vector2 dirNormalized)
@@ -66,14 +68,14 @@ public class SweetMagicScript : MonoBehaviour
         playerMoveScript.frictionEnabled--;
         playerMoveScript.movementEnabled--;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput, 0) * -0.5f);
+        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput, 0) * -1f);
         yield return new WaitForSeconds(windupTime);
         /*Attack*/
 
         particles.SetParticleDirection(horizontalInput);
 
         particles.Play();
-        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput,0) * 1.6f);
+        CineMachineImpulseManager.instance.Impulse(new Vector2(horizontalInput,0) * 1.8f);
         /*Casting for targets*/
         Vector2 size = new Vector2(range, 1f);
         Collider2D[] hits = Physics2D.OverlapBoxAll(playerMoveScript.collCenter + Vector2.right * horizontalInput * range / 2f, size, 0f, targetMask);
@@ -81,7 +83,7 @@ public class SweetMagicScript : MonoBehaviour
         {
             //Hit logic
         }
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(followThroughTime);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.SetXVel(horizontalInput * playerMoveScript.maxVelocity);
     }
