@@ -93,7 +93,8 @@ public class PatrolScript : MonoBehaviour
     void Attack()
     {
         //Ranged shooting
-        firePoint.rotation = Quaternion.Euler(player.position);
+        float angle = ((Vector2)(player.position - transform.position)).Angle();
+        firePoint.rotation = Quaternion.Euler(0,0,angle);
 
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
