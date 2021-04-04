@@ -22,7 +22,8 @@ public class PlayerInputScript : MonoBehaviour
     public event System.Action<Vector2> InteractButtonPressed;
     public event System.Action<Vector2> SweetStrikeButtonPressed;
     public event System.Action<Vector2> SavorySprayButtonPressed;
-
+    /*Platform dropdown*/
+    private float timer;
     private void Awake()
     {
         instance = this;
@@ -45,10 +46,24 @@ public class PlayerInputScript : MonoBehaviour
         vectorToMouseRaw = mousePosWorld - movementScript.collCenter;
         vectorToMouseNormalized = vectorToMouseRaw.normalized;
         //Jump
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             movementScript.Jump();
         }
+        //Drop down
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            Physics2D.IgnoreLayerCollision(14, 13,true);
+            transform.position += Vector3.up * 0.01f;
+            timer = 0.2f;
+        }
+        else if(timer > 0 && !Input.GetKey(KeyCode.S))
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+                Physics2D.IgnoreLayerCollision(14, 13, false);
+        }
+
         //Interact
         if(Input.GetKeyDown(KeyCode.E))
         {

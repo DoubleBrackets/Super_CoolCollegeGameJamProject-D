@@ -18,8 +18,8 @@ TagManager:
   - Collectable
   - Projectile
   - Walls
-  - 
-  - 
+  - PlatformTerrain
+  - PlayerPlatformCollider
   - 
   - 
   - 
