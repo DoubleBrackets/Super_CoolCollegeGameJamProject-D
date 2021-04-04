@@ -29,10 +29,6 @@ public class BitterMagicScript : MonoBehaviour
         }
     }
 
-
-
-
-
     void Shoot()
     {
    

@@ -1,20 +1,28 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PatrolScript : MonoBehaviour
 {
     
+    [HideInInspector]
     public bool mustPatrol;
     private bool mustTurn;
 
-    public float walkSpeed;
+    public float walkSpeed, range;
+    private float distToPlayer;
+    public float cooldownTime;
+
+    [HideInInspector]
+    public float nextFireTime = 0;
 
     public Rigidbody2D rb;
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
     public Collider2D bodyCollider;
+    public Transform player, firePoint;
+    public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +37,31 @@ public class PatrolScript : MonoBehaviour
         {
             Patrol();
         }
+
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distToPlayer <= range)
+        {
+            if ((player.position.x > transform.position.x && transform.localScale.x < 0) || (player.position.x < transform.position.x && transform.localScale.x > 0))
+            {
+                Flip();
+            }
+
+            mustPatrol = false;
+            rb.velocity = Vector2.zero;
+
+            if (Time.time > nextFireTime)
+            {
+                nextFireTime = Time.time + cooldownTime;
+                Attack();
+            }
+        }
+
+        else
+        {
+            mustPatrol = true;
+        }
+
     }
 
     private void FixedUpdate()
@@ -55,6 +88,14 @@ public class PatrolScript : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed*= -1;
         mustPatrol = true;
+    }
+
+    void Attack()
+    {
+        //Ranged shooting
+        firePoint.rotation = Quaternion.Euler(player.position);
+
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
 }
