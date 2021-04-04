@@ -102,11 +102,6 @@ public class BasicMovementScript : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere((Vector2)_collider.bounds.center + Vector2.down * _collider.bounds.extents.y, 0.1f);
-    }
-
     private void HorizontalMovement()
     {
         float horizontalAcceleration = accMagnitudePerPhysicsStep * horizontalInput;
