@@ -20,16 +20,28 @@ public class BitterMagicScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-                print ("hello world");
-                nextFireTime = Time.time + cooldownTime;
-                Shoot();
+
+                StartCoroutine(Hydropump());
 
             }
 
         }
     }
 
+    IEnumerator Hydropump() 
+    {
+        for (var i = 0; i < 4; i++)
+        {
 
+            nextFireTime = Time.time + cooldownTime;
+            Shoot();
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        yield return new WaitForSeconds(1);
+    
+    
+    }
 
 
 
