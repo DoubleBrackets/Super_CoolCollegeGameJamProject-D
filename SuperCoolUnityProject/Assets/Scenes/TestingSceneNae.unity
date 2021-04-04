@@ -492,6 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mustPatrol: 0
+  melee: 1
   walkSpeed: 100
   range: 4
   cooldownTime: 2

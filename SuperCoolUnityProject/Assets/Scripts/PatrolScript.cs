@@ -8,6 +8,10 @@ public class PatrolScript : MonoBehaviour
     [HideInInspector]
     public bool mustPatrol;
     private bool mustTurn;
+    public bool melee;
+
+    [HideInInspector]
+    public bool playerInRange;
 
     public float walkSpeed, range;
     private float distToPlayer;
@@ -42,6 +46,8 @@ public class PatrolScript : MonoBehaviour
 
         if (distToPlayer <= range)
         {
+            playerInRange = true;
+            
             if ((player.position.x > transform.position.x && transform.localScale.x < 0) || (player.position.x < transform.position.x && transform.localScale.x > 0))
             {
                 Flip();
@@ -50,16 +56,21 @@ public class PatrolScript : MonoBehaviour
             mustPatrol = false;
             rb.velocity = Vector2.zero;
 
-            if (Time.time > nextFireTime)
+            if (melee)
             {
-                nextFireTime = Time.time + cooldownTime;
                 Attack();
             }
+            
+            else
+            {
+                Shoot();
+            }     
         }
 
         else
         {
             mustPatrol = true;
+            playerInRange = false;
         }
 
     }
@@ -90,13 +101,27 @@ public class PatrolScript : MonoBehaviour
         mustPatrol = true;
     }
 
-    void Attack()
+    void Shoot()
     {
+<<<<<<< Updated upstream
         //Ranged shooting
         float angle = ((Vector2)(player.position - transform.position)).Angle();
         firePoint.rotation = Quaternion.Euler(0,0,angle);
+=======
+        if (Time.time > nextFireTime)
+        {
+            nextFireTime = Time.time + cooldownTime;
 
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            firePoint.rotation = Quaternion.Euler(player.position);
+>>>>>>> Stashed changes
+
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    void Attack()
+    {
+        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, player.position.x);
     }
 
 }
