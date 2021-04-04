@@ -58,7 +58,7 @@ public class PlayerInputScript : MonoBehaviour
         {
             SweetStrikeButtonPressed?.Invoke(vectorToMouseNormalized);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             SavorySprayButtonPressed?.Invoke(vectorToMouseNormalized);
         }

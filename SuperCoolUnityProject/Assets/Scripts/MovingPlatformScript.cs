@@ -8,25 +8,25 @@ public class MovingPlatformScript : MonoBehaviour
     //Movement points
     public Vector2[] positions;
     private float[] times;
-
+    //Keeps track of parent transforms of attached objects
     private Dictionary<Rigidbody2D,Transform> attachedRbs;
-
-    public float speed;
-
+    /*Positional check fields, since ya cant stand on a platform if you're under it*/
     private int size;
     private float floorYLocal;
     /*Moving physics fields*/
+    public float speed;
     private int currentPoint = 0;
     private int nextPoint = 1;
-    private float currentTimer= 0f;
+    private float currentTimer = 0f;
     private Vector2 previousVector;
+
 
     private void Awake()
     {
         size = positions.Length;
         times = new float[size];
         if (size < 2)
-            this.enabled = false;
+            enabled = false;
         attachedRbs = new Dictionary<Rigidbody2D, Transform>();
         for(int x = 0;x < size;x++)
         {
@@ -38,6 +38,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Update()
     {
+        /*Platform movement*/
         currentTimer += Time.deltaTime;
         Vector2 prevPos = transform.position;
         transform.position = Vector2.Lerp(positions[currentPoint],positions[nextPoint],currentTimer/times[currentPoint]);
@@ -54,9 +55,11 @@ public class MovingPlatformScript : MonoBehaviour
         nextPoint = (currentPoint + 1) % size;
         currentTimer = 0f;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+        //Positional check, only attaches objects on top of platform
         if(rb!= null && GetLowerY(rb) > transform.position.y + floorYLocal)
         {
             attachedRbs.Add(rb, rb.transform.parent);
@@ -75,6 +78,7 @@ public class MovingPlatformScript : MonoBehaviour
         Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+            //Releases object
             Transform returnTransform;
             bool valueFound = attachedRbs.TryGetValue(rb, out returnTransform);
             if(valueFound)
@@ -93,6 +97,8 @@ public class MovingPlatformScriptEditor : Editor
 {
     private void OnSceneGUI()
     {
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.blue;
         SerializedObject obj = new SerializedObject(target);
         SerializedProperty points = obj.FindProperty("positions");
         int len = points.arraySize;
@@ -101,7 +107,7 @@ public class MovingPlatformScriptEditor : Editor
             //Creates handles for each point
             SerializedProperty arrayElementProperty = points.GetArrayElementAtIndex(x);
             arrayElementProperty.vector2Value = Handles.PositionHandle(arrayElementProperty.vector2Value, Quaternion.identity);
-            Handles.Label(arrayElementProperty.vector2Value, "Position" + (x + 1));
+            Handles.Label(arrayElementProperty.vector2Value, "Position" + (x + 1),style);
         }
         obj.ApplyModifiedProperties();
     }

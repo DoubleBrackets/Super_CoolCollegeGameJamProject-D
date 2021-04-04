@@ -61,7 +61,8 @@ public class BasicMovementScript : MonoBehaviour
         fallGravity = defaultGravity * fallingGravityFactor;
         //Grounded boxcast uses collider bounds
         _collider = GetComponent<Collider2D>();
-        groundedBoxcastSize = (Vector2)_collider.bounds.size - Vector2.up*groundedSizeOffset - Vector2.right*groundedSizeOffset;
+        groundedBoxcastSize = (Vector2)_collider.bounds.size  + Vector2.right*groundedSizeOffset;
+        groundedBoxcastSize.y = groundedSizeOffset;
     }
 
     private void Update()
@@ -89,7 +90,7 @@ public class BasicMovementScript : MonoBehaviour
     private void GroundedCheck()
     {
         //Boxcasts down to check for a floor
-        RaycastHit2D hit = Physics2D.BoxCast(_collider.bounds.center, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset * 1f,groundedCheckMask);
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)_collider.bounds.center + Vector2.down*_collider.bounds.extents.y, groundedBoxcastSize, 0f, Vector2.down, groundedSizeOffset,groundedCheckMask);
         if(hit.collider != null)
         {
             groundedBufferTimer = groundedBufferTime;
@@ -100,7 +101,12 @@ public class BasicMovementScript : MonoBehaviour
             groundedRaw = false;
         }
     }
-     
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere((Vector2)_collider.bounds.center + Vector2.down * _collider.bounds.extents.y, 0.1f);
+    }
+
     private void HorizontalMovement()
     {
         float horizontalAcceleration = accMagnitudePerPhysicsStep * horizontalInput;
