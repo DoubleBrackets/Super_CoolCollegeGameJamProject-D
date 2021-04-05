@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 1219735651551042663, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -1571275167596460604, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -7494081614586308722, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 9188711718258032935, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 8824542191708225988, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -3273130942153412327, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -5932559098307303130, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 4219667377346161114, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -1784258789159945353, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -6794504292970511171, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 5981174393288813200, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 5740629641600399062, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 8303927791386513280, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -2889425842114655460, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 8862695874536739698, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -1277582622291260698, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -4926337173031634809, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 843174646847614639, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -646807934362835678, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -7184625744694483200, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -6602062500905551569, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -5086177406721319667, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -3492413997592523178, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 287232204932288703, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: -6667328985579222236, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 8008740440097041361, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    - {fileID: 2960545076273070494, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 287232204932288703, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -3492413997592523178, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -5086177406721319667, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -6602062500905551569, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 2960545076273070494, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 8008740440097041361, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -6667328985579222236, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -4926337173031634809, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 843174646847614639, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 8862695874536739698, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -1277582622291260698, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 8303927791386513280, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -2889425842114655460, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 5981174393288813200, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 5740629641600399062, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -646807934362835678, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -7184625744694483200, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 9188711718258032935, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -7494081614586308722, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -1571275167596460604, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 1219735651551042663, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 4219667377346161114, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -5932559098307303130, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -3273130942153412327, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: 8824542191708225988, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -6794504292970511171, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  - {fileID: -1784258789159945353, guid: 4523aabbe9379f745b6ae134984ba51b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - strawberry_cake_tileset_small_23
+  - strawberry_cake_tileset_small_22
+  - strawberry_cake_tileset_small_21
+  - strawberry_cake_tileset_small_20
+  - strawberry_cake_tileset_small_26
+  - strawberry_cake_tileset_small_25
+  - strawberry_cake_tileset_small_24
+  - strawberry_cake_tileset_small_16
+  - strawberry_cake_tileset_small_17
+  - strawberry_cake_tileset_small_14
+  - strawberry_cake_tileset_small_15
+  - strawberry_cake_tileset_small_12
+  - strawberry_cake_tileset_small_13
+  - strawberry_cake_tileset_small_10
+  - strawberry_cake_tileset_small_11
+  - strawberry_cake_tileset_small_18
+  - strawberry_cake_tileset_small_19
+  - strawberry_cake_tileset_small_3
+  - strawberry_cake_tileset_small_2
+  - strawberry_cake_tileset_small_1
+  - strawberry_cake_tileset_small_0
+  - strawberry_cake_tileset_small_7
+  - strawberry_cake_tileset_small_6
+  - strawberry_cake_tileset_small_5
+  - strawberry_cake_tileset_small_4
+  - strawberry_cake_tileset_small_9
+  - strawberry_cake_tileset_small_8
+  m_Tag: Atlas
+  m_IsVariant: 0
