@@ -49,7 +49,7 @@ public class PlayerAnimScript : MonoBehaviour
         }
     }
 
-    void PlayAttackAnimation(int attackId,int facing,float duration)
+    public void PlayAttackAnimation(int attackId,int facing,float duration)
     {
         anim.SetBool("IsAttacking", true);
         anim.SetInteger("AttackType", attackId);
