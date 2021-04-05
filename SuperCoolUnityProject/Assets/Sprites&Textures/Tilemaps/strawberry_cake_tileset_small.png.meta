@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: 4523aabbe9379f745b6ae134984ba51b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1219735651551042663
+    second: strawberry_cake_tileset_small_0
+  - first:
+      213: -1571275167596460604
+    second: strawberry_cake_tileset_small_1
+  - first:
+      213: -7494081614586308722
+    second: strawberry_cake_tileset_small_2
+  - first:
+      213: 9188711718258032935
+    second: strawberry_cake_tileset_small_3
+  - first:
+      213: 8824542191708225988
+    second: strawberry_cake_tileset_small_4
+  - first:
+      213: -3273130942153412327
+    second: strawberry_cake_tileset_small_5
+  - first:
+      213: -5932559098307303130
+    second: strawberry_cake_tileset_small_6
+  - first:
+      213: 4219667377346161114
+    second: strawberry_cake_tileset_small_7
+  - first:
+      213: -1784258789159945353
+    second: strawberry_cake_tileset_small_8
+  - first:
+      213: -6794504292970511171
+    second: strawberry_cake_tileset_small_9
+  - first:
+      213: 5981174393288813200
+    second: strawberry_cake_tileset_small_10
+  - first:
+      213: 5740629641600399062
+    second: strawberry_cake_tileset_small_11
+  - first:
+      213: 8303927791386513280
+    second: strawberry_cake_tileset_small_12
+  - first:
+      213: -2889425842114655460
+    second: strawberry_cake_tileset_small_13
+  - first:
+      213: 8862695874536739698
+    second: strawberry_cake_tileset_small_14
+  - first:
+      213: -1277582622291260698
+    second: strawberry_cake_tileset_small_15
+  - first:
+      213: -4926337173031634809
+    second: strawberry_cake_tileset_small_16
+  - first:
+      213: 843174646847614639
+    second: strawberry_cake_tileset_small_17
+  - first:
+      213: -646807934362835678
+    second: strawberry_cake_tileset_small_18
+  - first:
+      213: -7184625744694483200
+    second: strawberry_cake_tileset_small_19
+  - first:
+      213: -6602062500905551569
+    second: strawberry_cake_tileset_small_20
+  - first:
+      213: -5086177406721319667
+    second: strawberry_cake_tileset_small_21
+  - first:
+      213: -3492413997592523178
+    second: strawberry_cake_tileset_small_22
+  - first:
+      213: 287232204932288703
+    second: strawberry_cake_tileset_small_23
+  - first:
+      213: -6667328985579222236
+    second: strawberry_cake_tileset_small_24
+  - first:
+      213: 8008740440097041361
+    second: strawberry_cake_tileset_small_25
+  - first:
+      213: 2960545076273070494
+    second: strawberry_cake_tileset_small_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -100, y: 100}
+        - {x: -100, y: -100}
+        - {x: 100, y: -100}
+        - {x: 100, y: 100}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 76c5496dc1f5de010800000000000000
+      internalID: 1219735651551042663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5450f5f85b13ae0800000000000000
+      internalID: -1571275167596460604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e871cc41a7caff790800000000000000
+      internalID: -7494081614586308722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7214d36bf9cd48f70800000000000000
+      internalID: 9188711718258032935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c147327e52177a70800000000000000
+      internalID: 8824542191708225988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 868
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9113b99ffb08392d0800000000000000
+      internalID: -3273130942153412327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a160aee05bada0800000000000000
+      internalID: -5932559098307303130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9a5097f154f8a30800000000000000
+      internalID: 4219667377346161114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bb0cca51a0d37e0800000000000000
+      internalID: -1784258789159945353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_9
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db440a8285215b1a0800000000000000
+      internalID: -6794504292970511171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a64abcb66610350800000000000000
+      internalID: 5981174393288813200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_11
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 668
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d67bae6e30daaf40800000000000000
+      internalID: 5740629641600399062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 468
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f4616845a7d3370800000000000000
+      internalID: 8303927791386513280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_13
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 468
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b0ce36182b6e7d0800000000000000
+      internalID: -2889425842114655460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_14
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 468
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273151af0fe9efa70800000000000000
+      internalID: 8862695874536739698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 468
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea0e1bbf5d154ee0800000000000000
+      internalID: -1277582622291260698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_16
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 468
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788b5a5217222abb0800000000000000
+      internalID: -4926337173031634809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faea7fcbfde83bb00800000000000000
+      internalID: 843174646847614639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22526625c931607f0800000000000000
+      internalID: -646807934362835678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007eb5373f41b4c90800000000000000
+      internalID: -7184625744694483200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29f8987223c064a0800000000000000
+      internalID: -6602062500905551569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d12c7a8944a69b0800000000000000
+      internalID: -5086177406721319667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_22
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 268
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e45e809f3788fc0800000000000000
+      internalID: -3492413997592523178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb09a072b247cf300800000000000000
+      internalID: 287232204932288703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_24
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 68
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b82e5dc93e873a0800000000000000
+      internalID: -6667328985579222236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 68
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db2a468ff2c42f60800000000000000
+      internalID: 8008740440097041361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strawberry_cake_tileset_small_26
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 68
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91c9ccaf08f51920800000000000000
+      internalID: 2960545076273070494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
