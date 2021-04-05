@@ -76,7 +76,7 @@ public class EnemyScript : MonoBehaviour
 
         if (bodyCollider.IsTouching(playerCollider))
         {
-            Destroy(gameObject);
+            print("Player death");
         }
 
     }
