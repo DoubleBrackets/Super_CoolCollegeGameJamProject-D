@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.SceneManagement;
+//using UnityEditor.SceneManagement;
 using UnityEditor;
 
 [RequireComponent(typeof(TextMeshPro))]
@@ -93,7 +93,7 @@ public class DialogueScript : MonoBehaviour
     }
 }
 
-[CustomEditor(typeof(DialogueScript))]
+/*[CustomEditor(typeof(DialogueScript))]
 class DialogueEditor : Editor
 {
     SerializedProperty interactDist;
@@ -109,3 +109,4 @@ class DialogueEditor : Editor
         script.ApplyModifiedProperties();
     }
 }
+*/

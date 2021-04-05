@@ -1387,12 +1387,12 @@ PrefabInstance:
     - target: {fileID: 657329011820277296, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127.89
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 657329011820277296, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.47
+      value: 14.11
       objectReference: {fileID: 0}
     - target: {fileID: 657329011820277299, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
@@ -1402,12 +1402,12 @@ PrefabInstance:
     - target: {fileID: 657329012037029612, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127.89
+      value: 1.4244511
       objectReference: {fileID: 0}
     - target: {fileID: 657329012037029612, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.47
+      value: 6.958391
       objectReference: {fileID: 0}
     - target: {fileID: 657329012037029613, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
@@ -35989,7 +35989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321392223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 137.49, y: 16.24, z: 24.386864}
+  m_LocalPosition: {x: 132.5, y: 15.85, z: 24.386864}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 110745292}
@@ -37081,12 +37081,12 @@ PrefabInstance:
     - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127.89
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.47
+      value: 14.11
       objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601231, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
