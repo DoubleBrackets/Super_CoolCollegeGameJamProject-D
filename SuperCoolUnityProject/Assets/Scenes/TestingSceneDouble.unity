@@ -1553,22 +1553,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 705288253, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 705288253, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.376
-      objectReference: {fileID: 0}
-    - target: {fileID: 705288254, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
-      propertyPath: targetMask.m_Bits
-      value: 65536
-      objectReference: {fileID: 0}
-    - target: {fileID: 705288255, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 69888
-      objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601216, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
       propertyPath: m_Name
