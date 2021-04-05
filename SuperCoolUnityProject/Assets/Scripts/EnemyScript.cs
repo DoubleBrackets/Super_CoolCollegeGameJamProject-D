@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
     
     [HideInInspector]
@@ -24,7 +24,8 @@ public class PatrolScript : MonoBehaviour
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
-    public Collider2D bodyCollider;
+    public LayerMask playerLayer;
+    public Collider2D bodyCollider, playerCollider;
     public Transform player, firePoint;
     public GameObject bulletPrefab;
 
@@ -103,17 +104,12 @@ public class PatrolScript : MonoBehaviour
 
     void Shoot()
     {
-<<<<<<< Updated upstream
-        //Ranged shooting
-        float angle = ((Vector2)(player.position - transform.position)).Angle();
-        firePoint.rotation = Quaternion.Euler(0,0,angle);
-=======
         if (Time.time > nextFireTime)
         {
             nextFireTime = Time.time + cooldownTime;
 
-            firePoint.rotation = Quaternion.Euler(player.position);
->>>>>>> Stashed changes
+            float angle = ((Vector2)(player.position - transform.position)).Angle();
+            firePoint.rotation = Quaternion.Euler(0,0,angle);
 
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
@@ -121,7 +117,12 @@ public class PatrolScript : MonoBehaviour
 
     void Attack()
     {
-        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, player.position.x);
+        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, player.position.y);
+
+        if (bodyCollider.IsTouching(playerCollider))
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
 }
