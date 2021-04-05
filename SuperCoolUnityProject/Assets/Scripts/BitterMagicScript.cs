@@ -12,6 +12,10 @@ public class BitterMagicScript : MonoBehaviour
 
     public PlayerAnimScript bitterSprayAnim;
 
+    public ParticleSystem part;
+
+    public LayerMask targetMask;
+
     float lastshot;
     // Update is called once per frame
     void Update()
@@ -53,10 +57,23 @@ public class BitterMagicScript : MonoBehaviour
    
         firePoint.rotation = Quaternion.Euler(0, 0, PlayerInputScript.instance.vectorToMouseRaw.Angle());
 
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        part.Play();
+        
+        //Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         
         //shooting logic
 
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        if (targetMask.IsInMask(other.layer))
+        {
+            /*Damage logic*/
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            if (enemy != null)
+                Destroy(enemy.gameObject);
+        }
     }
 
 }
