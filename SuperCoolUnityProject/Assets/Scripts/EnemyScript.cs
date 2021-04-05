@@ -74,6 +74,11 @@ public class EnemyScript : MonoBehaviour
             playerInRange = false;
         }
 
+        if (bodyCollider.IsTouching(playerCollider))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void FixedUpdate()
