@@ -160,7 +160,7 @@ public class BasicMovementScript : MonoBehaviour
 
 }
 //Custom movement editor, mostly for visualizing jumps and whatnot for level design
-[CustomEditor(typeof(BasicMovementScript))]
+/*[CustomEditor(typeof(BasicMovementScript))]
 public class BasicMovementScriptCustomEditor : Editor
 {
     [DrawGizmo(GizmoType.Active)]
@@ -187,4 +187,4 @@ public class BasicMovementScriptCustomEditor : Editor
             prev = current;
         }
     }
-}
+}*/

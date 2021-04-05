@@ -17,6 +17,10 @@ public class EnemyScript : MonoBehaviour
     private float distToPlayer;
     public float cooldownTime;
 
+    public float turnCD = 0.5f;
+
+    private float turnCDtimer = 0;
+
     [HideInInspector]
     public float nextFireTime = 0;
 
@@ -38,6 +42,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        turnCDtimer -= Time.deltaTime;
+
         if (mustPatrol)
         {
             Patrol();
@@ -101,10 +107,15 @@ public class EnemyScript : MonoBehaviour
 
     void Flip()
     {
-        mustPatrol = false;
-        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        walkSpeed*= -1;
-        mustPatrol = true;
+        if (turnCDtimer <= 0)
+        {
+            turnCDtimer = turnCD;
+
+            mustPatrol = false;
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            walkSpeed *= -1;
+            mustPatrol = true;
+        }
     }
 
     void Shoot()
