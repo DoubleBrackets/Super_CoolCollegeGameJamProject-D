@@ -487,20 +487,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 857457152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7c69c99df07d042911e64a18ed27ad, type: 3}
+  m_Script: {fileID: 11500000, guid: becadcab1cd3afb4e8a7414aa2290db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mustPatrol: 0
-  walkSpeed: 100
-  rb: {fileID: 857457157}
-  groundCheckPos: {fileID: 234155189}
+  melee: 0
+  playerInRange: 0
+  walkSpeed: 0
+  range: 0
+  cooldownTime: 0
+  nextFireTime: 0
+  rb: {fileID: 0}
+  groundCheckPos: {fileID: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   wallLayer:
     serializedVersion: 2
-    m_Bits: 4096
-  bodyCollider: {fileID: 857457154}
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  bodyCollider: {fileID: 0}
+  playerCollider: {fileID: 0}
+  player: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!50 &857457157
 Rigidbody2D:
   serializedVersion: 4
@@ -1174,7 +1186,7 @@ PrefabInstance:
     - target: {fileID: 657329012037029612, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 657329012037029614, guid: 3e82c2f7ebfebc74eb0f61b39b1c99a1,
         type: 3}
