@@ -63,9 +63,10 @@ public class SavorySprayScript : MonoBehaviour
     {
         if(targetMask.IsInMask(other.layer))
         {
-            Rigidbody rb = other.GetComponent<Rigidbody>();
             /*Damage logic*/
-            
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            if (enemy != null)
+                Destroy(enemy.gameObject);
         }
     }
 }

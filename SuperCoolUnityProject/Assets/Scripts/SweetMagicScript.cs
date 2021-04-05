@@ -14,7 +14,7 @@ public class SweetMagicScript : MonoBehaviour
     public float range;
     private float cooldownTimer = 0f;
     public float windupTime;
-    private LayerMask targetMask = 1 << 12;
+    private LayerMask targetMask = 1 << 16;
     private float followThroughTime = 0.2f;
     /*Dash component fields*/
     public float dashVel;
@@ -82,6 +82,11 @@ public class SweetMagicScript : MonoBehaviour
         foreach(Collider2D hitTarget in hits)
         {
             //Hit logic
+            EnemyScript enemy = hitTarget.GetComponent<EnemyScript>();
+            if(enemy != null)
+            {
+                Destroy(enemy.gameObject);
+            }
         }
         yield return new WaitForSeconds(followThroughTime);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;

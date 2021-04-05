@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class PatrolScript : MonoBehaviour
 {
     
     [HideInInspector]
@@ -24,8 +24,7 @@ public class EnemyScript : MonoBehaviour
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
-    public LayerMask playerLayer;
-    public Collider2D bodyCollider, playerCollider;
+    public Collider2D bodyCollider;
     public Transform player, firePoint;
     public GameObject bulletPrefab;
 
@@ -74,11 +73,6 @@ public class EnemyScript : MonoBehaviour
             playerInRange = false;
         }
 
-        if (bodyCollider.IsTouching(playerCollider))
-        {
-            print("Player death");
-        }
-
     }
 
     private void FixedUpdate()
@@ -109,12 +103,16 @@ public class EnemyScript : MonoBehaviour
 
     void Shoot()
     {
+
+        //Ranged shooting
+        float angle = ((Vector2)(player.position - transform.position)).Angle();
+        firePoint.rotation = Quaternion.Euler(0,0,angle);
+
         if (Time.time > nextFireTime)
         {
             nextFireTime = Time.time + cooldownTime;
 
-            float angle = ((Vector2)(player.position - transform.position)).Angle();
-            firePoint.rotation = Quaternion.Euler(0,0,angle);
+            firePoint.rotation = Quaternion.Euler(player.position);
 
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
@@ -122,12 +120,7 @@ public class EnemyScript : MonoBehaviour
 
     void Attack()
     {
-        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, rb.velocity.y);
-
-        if (bodyCollider.IsTouching(playerCollider))
-        {
-            rb.velocity = Vector2.zero;
-        }
+        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, player.position.x);
     }
 
 }

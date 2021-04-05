@@ -494,11 +494,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 857457152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d27fd86a447ea8448afb6eda3825fab4, type: 3}
+  m_Script: {fileID: 11500000, guid: becadcab1cd3afb4e8a7414aa2290db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mustPatrol: 0
-  melee: 1
+  melee: 0
   playerInRange: 0
   walkSpeed: 100
   range: 4
@@ -1240,6 +1240,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410937114, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 410937114, guid: 65d2d108df1cc0142b89404828eabb56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2888095731545601216, guid: 65d2d108df1cc0142b89404828eabb56,
         type: 3}
       propertyPath: m_Name
