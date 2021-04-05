@@ -24,11 +24,14 @@ public class BitterMagicScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-                int facing = (int) Mathf.Sign(PlayerInputScript.instance.vectorToMouseRaw.x);
+                Vector2 dir = PlayerInputScript.instance.vectorToMouseRaw;
+                int facing = (int) Mathf.Sign(dir.x);
+                float angle = dir.Angle();
+                transform.rotation = Quaternion.Euler(0, 0, angle);
 
                 StartCoroutine(Hydropump());
 
-                bitterSprayAnim.PlayAttackAnimation(3, facing, 0.5f);
+                bitterSprayAnim.PlayAttackAnimation(3, facing, 0.75f);
 
             }
 
