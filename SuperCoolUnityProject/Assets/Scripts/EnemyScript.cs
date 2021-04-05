@@ -122,7 +122,7 @@ public class EnemyScript : MonoBehaviour
 
     void Attack()
     {
-        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, player.position.y);
+        rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, rb.velocity.y);
 
         if (bodyCollider.IsTouching(playerCollider))
         {
