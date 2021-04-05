@@ -18,7 +18,7 @@ public class VoidScript : MonoBehaviour
     }
 }
 
-[CustomEditor(typeof(VoidScript))]
+/*[CustomEditor(typeof(VoidScript))]
  class VoidScriptEditor : Editor
 {
     private void OnSceneGUI()
@@ -29,4 +29,4 @@ public class VoidScript : MonoBehaviour
         Handles.Label(property.vector2Value, "RespawnPosition");
         obj.ApplyModifiedProperties();
     }
-}
+}*/

@@ -90,7 +90,7 @@ public class MovingPlatformScript : MonoBehaviour
         }
     }
 }
-
+/*
 [CustomEditor(typeof(MovingPlatformScript))]
 
 public class MovingPlatformScriptEditor : Editor
@@ -111,4 +111,4 @@ public class MovingPlatformScriptEditor : Editor
         }
         obj.ApplyModifiedProperties();
     }
-}
+}*/
